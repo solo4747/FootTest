@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:padding="6dip">
+
+    <!-- Label Name -->
+    <TextView
+        android:id="@+id/toptext"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="name"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <!--  Name Data -->
+    <TextView
+        android:id="@+id/toptextdata"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toptext"
+
+        android:text="speed"
+
+        />
+
+    <!-- Price Tag -->
+    <TextView
+        android:id="@+id/middletext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="stats"
+        android:layout_below="@+id/toptextdata"
+        android:textStyle="bold"
+        />
+
+    <!-- Actual Price Data -->
+    <TextView
+        android:id="@+id/middletextdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stats1"
+        android:layout_below="@+id/middletext"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>

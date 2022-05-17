@@ -1,0 +1,18 @@
+RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+        String url = "https://okochatest.footbar.com/profile/list/?page=1";
+
+
+        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                player.setText(response.toString());
+
+            }
+        },  new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                    }
+                });
+    queue.add(request);
