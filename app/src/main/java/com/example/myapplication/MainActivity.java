@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     boolean boucle = true;
     JsonObjectRequest request;
     String next = "";
-
+    ListView playersListView = null;
 
 
     private ArrayList<Player> joueurs;
@@ -57,11 +57,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        ListView playersListView = null;
+
 //        ArrayList<String> playersName = new ArrayList<String>();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // Cette fonction relie mon activity.xml à mon activity.java file.
 
 
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                                                          //   playersListView = findViewById(R.id.list1);
 
         //                  3. Link Adapter & ListView
-                                                         //    finalPlayersListView.setAdapter(playersAdapter);
+                                                         //    playersListView.setAdapter(playersAdapter);
 
 
 
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                                                 android.R.layout.simple_list_item_1,
                                                 playersName
                                         );
-                                        finalPlayersListView.setAdapter(playersAdapter);
+                                        playersListView.setAdapter(playersAdapter);
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();
