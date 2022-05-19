@@ -16,3 +16,13 @@ RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                     }
                 });
     queue.add(request);
+
+
+
+
+
+    // creeer la methode populate dans mon programme à moi
+
+        je dois remplir un Array de joueurs en ajoutant à chaque fois :
+
+        add(nom et speed_score)

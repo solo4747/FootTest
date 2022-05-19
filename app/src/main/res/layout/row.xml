@@ -2,9 +2,21 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
 
-    android:padding="6dip">
+
+    <!--  Name Data -->
+    <TextView
+        android:id="@+id/topId"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="id. "
+        android:layout_alignParentLeft="true"
+
+        android:layout_margin="10dp"
+        />
+
 
     <!-- Label Name -->
     <TextView
@@ -13,9 +25,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="name"
-        android:layout_centerHorizontal="true"
+        android:text="ok"
+        android:layout_toRightOf="@+id/topId"
+        android:layout_marginTop="10dp"
 
+
+        />
+    <!--  Name Data -->
+    <TextView
+        android:id="@+id/toplabeldata"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toptext"
+        android:text="Speed : "
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
         />
 
     <!--  Name Data -->
@@ -25,30 +50,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toptext"
-
-        android:text="speed"
+        android:text="Speed"
+        android:layout_toRightOf="@+id/toplabeldata"
 
         />
 
-    <!-- Price Tag -->
-    <TextView
-        android:id="@+id/middletext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="stats"
-        android:layout_below="@+id/toptextdata"
-        android:textStyle="bold"
-        />
+<!--    &lt;!&ndash; Price Tag &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/middletext"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:text="stats"-->
+<!--        android:layout_below="@+id/toptextdata"-->
+<!--        android:textStyle="bold"-->
+<!--        />-->
 
-    <!-- Actual Price Data -->
-    <TextView
-        android:id="@+id/middletextdata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="stats1"
-        android:layout_below="@+id/middletext"
-        android:textStyle="bold"
-        />
+<!--    &lt;!&ndash; Actual Price Data &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/middletextdata"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="stats1"-->
+<!--        android:layout_below="@+id/middletext"-->
+<!--        android:textStyle="bold"-->
+<!--        />-->
 
 </RelativeLayout>

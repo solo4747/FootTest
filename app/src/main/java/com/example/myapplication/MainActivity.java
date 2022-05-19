@@ -40,33 +40,26 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    JSONObject object = null;
-    // String url = "https://okochatest.footbar.com/profile/list/?page=1";
     static int x = 1;
     static int y = 0;
     boolean boucle = true;
     JsonObjectRequest request;
-    String next = "";
     ListView playersListView = null;
 
 
     private ArrayList<Player> joueurs;
-    private ArrayList<String> playersName;
+    //private ArrayList<String> playersName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
-
-//        ArrayList<String> playersName = new ArrayList<String>();
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Cette fonction relie mon activity.xml à mon activity.java file.
 
 
-        playersName = new ArrayList<>();
+        //playersName = new ArrayList<>();
         joueurs = new ArrayList<>();
 
 
@@ -98,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
             do {
 
-                ListView finalPlayersListView = playersListView;
+                //ListView finalPlayersListView = playersListView;
 
 
                 request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -111,25 +104,31 @@ public class MainActivity extends AppCompatActivity {
 
 
                                     String name = "";
-
+                                    String speed;
                                     try {
                                         JSONArray players = response.getJSONArray("results");
-                                        name = players.getJSONObject(0).getString("name");
+
 
                                         for (int i = 0; i < players.length(); i++) {
                                             name = players.getJSONObject(i).getString("name");
-//
-                                            playersName.add(String.valueOf(y) + ". " + name);
+                                            speed = players.getJSONObject(i).getString("speed_score");
+
+                                            //playersName.add(String.valueOf(y) + ". " + name);
+                                            joueurs.add(new Player(name, speed, String.valueOf(y) ));
                                             y++;
 
                                         }
-                                        ArrayAdapter<String> playersAdapter = new ArrayAdapter<>(
-                                                MainActivity.this,
-                                                android.R.layout.simple_list_item_1,
-                                                playersName
-                                        );
-                                        playersListView.setAdapter(playersAdapter);
-
+//                                        ArrayAdapter<String> playersAdapter = new ArrayAdapter<>(
+//                                                MainActivity.this,
+//                                                android.R.layout.simple_list_item_1,
+//                                                playersName
+//                                        );
+//                                        playersListView.setAdapter(playersAdapter);
+                                       PlayerAdapter adapter = new PlayerAdapter(MainActivity.this,
+                                                  R.layout.row,
+                                                  joueurs);
+                                        playersListView = findViewById(R.id.list1);
+                                        playersListView.setAdapter(adapter);
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
@@ -145,11 +144,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+
                 x += 1;
                 url = "https://okochatest.footbar.com/profile/list/?page=" + String.valueOf(x);
                 queue.add(request);
 
             } while(x<7);
+
 
     }
 

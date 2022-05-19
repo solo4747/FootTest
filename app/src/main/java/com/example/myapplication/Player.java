@@ -4,22 +4,17 @@ public class Player {
 
     // variables for our course
     // name and description.
-    private int id;
+    private String id;
     private String name;
+    private String speed;
+
+
 
 
     // creating constructor for our variables.
-    public Player(int id, String name) {
-        this.id = id;
+    public Player(String name, String speed, String id) {
         this.name = name;
-
-    }
-
-    public int getId() {
-        return this.id;
-    }
-
-    public void setCId(int id) {
+        this.speed = speed;
         this.id = id;
     }
 
@@ -29,6 +24,22 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSpeed() {
+        return this.speed;
+    }
+
+    public void setSpeed(String speed) {
+        this.speed = speed;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return this.id;
     }
 
 
